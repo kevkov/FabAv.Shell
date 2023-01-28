@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="Fabulous.Avalonia.SingleProject.props" />
+  
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net7.0;net7.0-android;net7.0-ios</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(AvaloniaPlatform)|$(Configuration)' == 'iOS|Debug' ">
+    <CodesignKey>Apple Development: Timothé Larivière (X6N2KN9WK3)</CodesignKey>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Include="App.fs" />
+    <Compile Include="Controls\Extensions.fs" />
+    <Compile Include="Controls\MaterialIcon.fs" />
+    <Compile Include="Controls\MobileMenuPage.fs" />
+    <Content Include="Fabulous.Avalonia.SingleProject.targets" />
+    <Content Include="Fabulous.Avalonia.SingleProject.props" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Fabulous.Avalonia">
+      <HintPath>..\lib\Fabulous.Avalonia.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0-preview4" />
+    <PackageReference Include="Fabulous" Version="2.2.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\FabAvalonia.Shell.Theme\FabAv.Shell.Theme.csproj" />
+  </ItemGroup>
+
+
+  <Import Project="Fabulous.Avalonia.SingleProject.targets" />
+</Project>
