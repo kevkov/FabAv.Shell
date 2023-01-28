@@ -1,4 +1,4 @@
-namespace CounterApp.Android
+namespace ShellApp.Android
 
 open Android.App
 open Android.Content.PM

@@ -1,9 +1,10 @@
 ﻿namespace FabAv.Shell.Controls
 
+open Avalonia
 open Avalonia.Layout
 open Avalonia.Media
+open Fabulous
 open Fabulous.Avalonia
-open Avalonia
 open type View
 open Extensions
 open Material.Icons
@@ -11,18 +12,32 @@ open Material.Icons
 [<AutoOpen>]
 module MobileMenuPage =
     
+    type Model = {
+        isMenuVisible: bool
+    }
+
+    type Msg =
+        | MenuShown of bool
+    
     type MenuItem = {
         Header: string
         Kind: MaterialIconKind
         Content: obj
     }
+    
+    let init () =
+        { isMenuVisible = false }, Cmd.none
+        
+    let update model msg  =
+        match msg with
+        | MenuShown b -> { isMenuVisible = b }, Cmd.none
 
-    let MobileMenuPage<'msg> (index:int) (msg: 'msg) =
+    let view model =
         let menuItems = [
             { Header = "DashBoard"; Kind = MaterialIconKind.CircleOutline; Content = null }
             { Header = "Settings"; Kind = MaterialIconKind.Settings; Content = null }
         ]
-        let icon = MaterialIcon(enum<Material.Icons.MaterialIconKind> index)
+        let icon = MaterialIcon(MaterialIconKind.ChevronLeft)
                         .height(35.)
                         .width(35.)
                         .foregroundStyle("SukiText")
@@ -31,7 +46,7 @@ module MobileMenuPage =
                (Canvas() {
                     Border(
                         (VStack() {
-                            Button(msg, Grid () { icon })
+                            Button(MenuShown false, Grid () { icon })
                                 .classes("Accent")
                                 .horizontalAlignment(HorizontalAlignment.Right)
                                 .margin(Thickness(0,5,25,0))
@@ -75,7 +90,11 @@ module MobileMenuPage =
             }
             
         let content () =
-            TextBlock("World")
+            Button(MenuShown true,
+                   MaterialIcon(MaterialIconKind.Menu)
+                        .height(35.)
+                        .width(35.)
+                        .foregroundStyle("SukiText"))
 
         View.SplitView(pane(), content())
             .compactPaneLength(0)

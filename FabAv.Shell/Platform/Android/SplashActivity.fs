@@ -1,4 +1,4 @@
-namespace CounterApp.Android
+namespace ShellApp.Android
 
 open System
 open Android.App
@@ -6,7 +6,7 @@ open Android.Content
 open Avalonia
 open Avalonia.Android
 open Avalonia.Markup.Xaml.Styling
-open CounterApp
+open ShellApp
 open Fabulous.Avalonia
 
 [<Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)>]

@@ -3,7 +3,7 @@ namespace CounterApp.iOS
 open Foundation
 open UIKit
 open Fabulous.Avalonia
-open CounterApp
+open ShellApp
 
 [<Register("AppDelegate")>]
 type AppDelegate() =

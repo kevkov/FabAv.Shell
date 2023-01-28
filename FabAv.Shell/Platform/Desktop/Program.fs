@@ -3,7 +3,7 @@ namespace CounterApp.Desktop
 open System
 open Avalonia
 
-open CounterApp
+open ShellApp
 open Fabulous.Avalonia
 
 module Program =
