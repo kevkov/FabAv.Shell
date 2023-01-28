@@ -7,16 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Fabulous.Avalonia\Fabulous.Avalonia.fsproj" />
+        <AvaloniaXaml Remove="Light.axaml" />
+        <AvaloniaResource Include="Light.axaml" />
+        <AvaloniaXaml Remove="Dark.axaml" />
+        <AvaloniaResource Include="Dark.axaml" />
     </ItemGroup>
 
     <ItemGroup>
-      <AvaloniaXaml Remove="Light.axaml" />
-      <AvaloniaResource Include="Light.axaml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.0.0-preview4" />
+        <PackageReference Include="Avalonia" Version="11.0.0-preview4" />
     </ItemGroup>
 
 </Project>

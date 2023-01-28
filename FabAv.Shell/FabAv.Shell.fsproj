@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="Fabulous.Avalonia.SingleProject.props" />
+  <Import Project="../../Fabulous.Avalonia/src/Fabulous.Avalonia.SingleProject.props" />
   
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,29 +11,30 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Compile Include="App.fs" />
     <Compile Include="Controls\Extensions.fs" />
     <Compile Include="Controls\MaterialIcon.fs" />
     <Compile Include="Controls\MobileMenuPage.fs" />
-    <Content Include="Fabulous.Avalonia.SingleProject.targets" />
-    <Content Include="Fabulous.Avalonia.SingleProject.props" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="Fabulous.Avalonia">
-      <HintPath>..\lib\Fabulous.Avalonia.dll</HintPath>
-    </Reference>
+    <Compile Include="App.fs" />
   </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.0-preview4" />
     <PackageReference Include="Fabulous" Version="2.2.0" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="1.2.0" />
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\..\Fabulous.Avalonia\src\Fabulous.Avalonia.Themes.Fluent\Fabulous.Avalonia.Themes.Fluent.fsproj" />
+    <ProjectReference Include="..\..\Fabulous.Avalonia\src\Fabulous.Avalonia\Fabulous.Avalonia.fsproj" />
     <ProjectReference Include="..\FabAvalonia.Shell.Theme\FabAv.Shell.Theme.csproj" />
   </ItemGroup>
-
-
-  <Import Project="Fabulous.Avalonia.SingleProject.targets" />
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Styles\ButtonStyles.xaml" />
+    <AvaloniaResource Include="Styles\RadioButtonStyles.xaml" />
+    <AvaloniaResource Include="Styles\TextBlockStyles.xaml" />
+    <AvaloniaResource Include="Styles\Roboto-Regular.ttf" />
+  </ItemGroup>
+  
+  <Import Project="../../Fabulous.Avalonia/src/Fabulous.Avalonia.SingleProject.targets" />
 </Project>

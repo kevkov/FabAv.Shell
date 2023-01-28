@@ -20,10 +20,10 @@ type SplashActivity() =
                     let x = Program.startApplication App.program
                     x.Styles.Clear()
                     x.Styles.Add(StyleInclude(Uri("avares://Material.Icons.Avalonia/"), Source = Uri("avares://Material.Icons.Avalonia/App.xaml")))
-                    x.Styles.Add(StyleInclude(Uri("avares://Fabulous.Avalonia.SukiUI.Theme/"), Source = Uri("avares://Fabulous.Avalonia.SukiUI.Theme/Light.axaml")))
-                    x.Styles.Add(StyleInclude(Uri("avares://Fabulous.SukiUI/Theme/"), Source = Uri("avares://Fabulous.SukiUI/Theme/ButtonStyles.xaml")))
-                    x.Styles.Add(StyleInclude(Uri("avares://Fabulous.SukiUI/Theme/"), Source = Uri("avares://Fabulous.SukiUI/Theme/RadioButtonStyles.xaml")))
-                    x.Styles.Add(StyleInclude(Uri("avares://Fabulous.SukiUI/Theme/"), Source = Uri("avares://Fabulous.SukiUI/Theme/TextBlockStyles.xaml")))
+                    x.Styles.Add(StyleInclude(Uri("avares://FabAv.Shell.Theme/"), Source = Uri("avares://FabAv.Shell.Theme/Light.axaml")))
+                    x.Styles.Add(StyleInclude(Uri("avares://FabAv.Shell/Styles/"), Source = Uri("avares://FabAv.Shell/Styles/ButtonStyles.xaml")))
+                    x.Styles.Add(StyleInclude(Uri("avares://FabAv.Shell/Styles/"), Source = Uri("avares://FabAv.Shell/Styles/RadioButtonStyles.xaml")))
+                    x.Styles.Add(StyleInclude(Uri("avares://FabAv.Shell/Styles/"), Source = Uri("avares://FabAv.Shell/Styles/TextBlockStyles.xaml")))
                     x)
             .UseAndroid()
 

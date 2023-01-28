@@ -1,7 +1,6 @@
 ﻿namespace FabAv.Shell.Controls
 
 open Avalonia.Layout
-open FabAv.Shell.Native
 open Avalonia.Media
 open Fabulous.Avalonia
 open Avalonia
@@ -18,7 +17,7 @@ module MobileMenuPage =
         Content: obj
     }
 
-    let MobileMenuPage (index:int) increment =
+    let MobileMenuPage<'msg> (index:int) (msg: 'msg) =
         let menuItems = [
             { Header = "DashBoard"; Kind = MaterialIconKind.CircleOutline; Content = null }
             { Header = "Settings"; Kind = MaterialIconKind.Settings; Content = null }
@@ -32,7 +31,7 @@ module MobileMenuPage =
                (Canvas() {
                     Border(
                         (VStack() {
-                            Button(Grid () { icon }, increment)
+                            Button(msg, Grid () { icon })
                                 .classes("Accent")
                                 .horizontalAlignment(HorizontalAlignment.Right)
                                 .margin(Thickness(0,5,25,0))

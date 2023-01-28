@@ -2,7 +2,7 @@
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
-namespace Fabulous.Avalonia.SukiUI.Theme;
+namespace FabAv.Shell.Theme;
 
 public static class ColorTheme
 {

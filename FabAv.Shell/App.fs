@@ -4,7 +4,7 @@ open Avalonia
 open Fabulous
 open Fabulous.Avalonia
 open FabAv.Shell.Theme
-open Fabulous.SukiUI.Controls
+open FabAv.Shell.Controls
 open Fabulous.Avalonia;
 
 open type Fabulous.Avalonia.View

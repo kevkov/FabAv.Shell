@@ -18,14 +18,14 @@
 
     <Style Selector="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
-        <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Regular.ttf#Roboto" />
+        <Setter Property="FontFamily" Value="avares://FabAv.Shell/Styles/Roboto-Regular.ttf#Roboto" />
         <Setter Property="FontSize" Value="15" />
     </Style>
 
 
 
     <Style Selector="TextBox">
-        <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Regular.ttf#Roboto" />
+        <Setter Property="FontFamily" Value="avares://FabAv.Shell/Styles/Roboto-Regular.ttf#Roboto" />
         <Setter Property="FontSize" Value="15" />
     </Style>
     <Style Selector="TextBlock.h4">
