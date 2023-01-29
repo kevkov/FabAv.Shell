@@ -92,14 +92,23 @@ module MobileMenuPage =
         let content () =
             Button(MenuShown true,
                    MaterialIcon(MaterialIconKind.Menu)
-                        .height(35.)
-                        .width(35.)
+                        .height(30)
+                        .width(30)
                         .foregroundStyle("SukiText"))
+                .background(SolidColorBrush(Colors.Transparent))
+                .borderThickness(0.)
+                .classes("ZoomOnHover")
+                .height(50.)
+                .horizontalAlignment(HorizontalAlignment.Left)
+                .margin(Thickness(15, 20, 0, 0))
+                .padding(0)
+                .verticalAlignment(VerticalAlignment.Top)
+                .width(50)
 
         View.SplitView(pane(), content())
             .compactPaneLength(0)
             .displayMode(Avalonia.Controls.SplitViewDisplayMode.CompactOverlay)
-            .isPaneOpen(true)
+            .isPaneOpen(model.isMenuVisible)
             .openPaneLength(316.)
             .useLightDismissOverlayMode(true)
 
